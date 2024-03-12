@@ -1,0 +1,37 @@
+{
+  "endpoint": {
+    "URI": "https://yourmodelendpoint.azurecontainers.io/score",
+    "API_KEY": "yourapikey123456789",
+    "request": {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer yourapikey123456789"
+      },
+      "body": {
+        "Inputs": {
+          "input1": [
+            {
+              "area": 2000,
+              "num_bedrooms": 4,
+              "location": "suburb"
+            }
+          ]
+        },
+        "GlobalParameters": {}
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": {
+        "Results": {
+          "output1": [
+            {
+              "predicted_price": 350000
+            }
+          ]
+        }
+      }
+    }
+  }
+}
