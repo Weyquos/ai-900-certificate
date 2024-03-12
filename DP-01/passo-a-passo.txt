@@ -1,0 +1,35 @@
+Para criar um modelo de previsão e configurar seus pontos de extremidade (endpoints) no Azure, você pode seguir estes passos. Este guia assume que você já tem uma assinatura do Azure e acesso ao Azure Machine Learning Studio.
+
+1. Preparar os Dados
+Antes de tudo, você precisa ter os dados prontos para treinar seu modelo. Isso geralmente envolve limpar e preparar seus dados em um formato adequado para treinamento.
+
+2. Criar um Recurso de Azure Machine Learning
+1. No portal do Azure, clique em "Criar um recurso".
+2. Busque por "Machine Learning" e selecione a opção correspondente.
+3. Clique em "Criar" e preencha os detalhes necessários como assinatura, grupo de recursos, nome do workspace, região, etc.
+4. Clique em "Revisar + criar" e depois em "Criar".
+
+3. Acessar o Azure Machine Learning Studio
+1. Após a criação do recurso, acesse o Azure Machine Learning Studio navegando até o seu recurso de Machine Learning no portal do Azure e clicando em "Launch studio".
+
+4. Criar um Experimento
+1. No Azure Machine Learning Studio, vá até a seção "Autor" e selecione "Notebooks" ou "Designer" para criar seu modelo usando notebooks Jupyter ou a interface gráfica do Designer, respectivamente.
+
+5. Treinar o Modelo
+- **Usando Notebooks**: Carregue seus dados, pré-processe-os, defina seu modelo, treine-o e avalie a performance do modelo.
+- **Usando Designer**: Arraste e solte módulos para criar seu pipeline de dados, incluindo carregamento de dados, pré-processamento, seleção de modelo, treinamento de modelo e avaliação.
+
+6. Registrar o Modelo
+Após o treinamento, registre seu modelo no Azure ML Studio para que você possa facilmente referenciá-lo mais tarde.
+
+7. Criar um Ponto de Extremidade
+1. No Azure Machine Learning Studio, vá até a seção "Modelos" e encontre o modelo que você registrou.
+2. Selecione o modelo e clique em "Implantar" para criar um ponto de extremidade.
+3. Forneça um nome para o ponto de extremidade, selecione "Azure Container Instance (ACI)" ou "Azure Kubernetes Service (AKS)" para a implantação e forneça qualquer outra configuração necessária.
+
+8. Testar o Ponto de Extremidade
+Após a implantação, você pode testar o ponto de extremidade usando o Azure ML Studio ou programaticamente via HTTP requests enviando dados de entrada e recebendo previsões.
+
+### Código do Arquivo .json de Pontos de Extremidade
+Quando você implanta seu modelo como um serviço web, o Azure gera automaticamente um arquivo de pontos de extremidade. Este arquivo pode ser encontrado na seção de pontos de extremidade (endpoints) do Azure Machine Learning Studio, sob as propriedades do ponto de extremidade específico. O arquivo .json de um ponto de extremidade típico contém detalhes sobre a URL de requisição, chave de autenticação, e o formato dos dados de entrada e saída.
+
